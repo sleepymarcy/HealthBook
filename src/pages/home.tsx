@@ -11,12 +11,18 @@ const HomePage: React.FunctionComponent<IPage> = props => {
 
     return (
         <div>
-            <p>This is the Home Page</p>
-            <div><Link to='/login'>Login</Link></div>
-            <div><Link to='/register'>Sign Up</Link></div>
-            <div><Link to='/pets/:petname'>Go to the pet page!</Link></div>
-            <div><Link to='/pets'>Go to the pets page!</Link></div>
-            <div><Link to='/newpet'>Add a new pet</Link></div>
+            <div className="card">
+                <div className="card-content">
+                    <div className="content">
+                        <p>This is the Home Page</p>
+                        <div><Link to='/login'>Login</Link></div>
+                        <div><Link to='/register'>Sign Up</Link></div>
+                        <div><Link to='/pets/:petname'>Go to the pet page!</Link></div>
+                        <div><Link to='/pets'>Go to the pets page!</Link></div>
+                        <div><Link to='/newpet'>Add a new pet</Link></div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 
