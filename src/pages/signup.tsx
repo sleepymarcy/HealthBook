@@ -3,6 +3,9 @@ import IPage from '../interfaces/page'
 import logging from '../config/logging'
 import { Link } from 'react-router-dom'
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faCheck, faLock } from '@fortawesome/free-solid-svg-icons'
+
 const SignupPage: React.FunctionComponent<IPage> = props => {
 
     useEffect(() => {
@@ -10,9 +13,46 @@ const SignupPage: React.FunctionComponent<IPage> = props => {
     }, [props.name]);
 
     return (
-        <div>
-            <p>You can sign up if you don't have an account yet or <Link to='/login'>log into an existing account!</Link> </p>
+        <div className="login-wrapper">
+            <div className="box box-wrapper">
+                <div className="field">
+                    <p className="control has-icons-left has-icons-right">
+                        <input className="input" type="email" placeholder="Email" />
+                        <span className="icon is-small is-left">
+                            <FontAwesomeIcon icon={faEnvelope} />
+                        </span>
+                        <span className="icon is-small is-right">
+                            <FontAwesomeIcon icon={faCheck} />
+                        </span>
+                    </p>
+                </div>
+                <div className="field">
+                    <p className="control has-icons-left">
+                        <input className="input" type="password" placeholder="Password" />
+                        <span className="icon is-small is-left">
+                            <FontAwesomeIcon icon={faLock} />
+                        </span>
+                    </p>
+                </div>
+                <div className="field">
+                    <p className="control has-icons-left">
+                        <input className="input" type="password" placeholder="Repeat Password" />
+                        <span className="icon is-small is-left">
+                            <FontAwesomeIcon icon={faLock} />
+                        </span>
+                    </p>
+                </div>
+                <div className="field log-button" id="">
+                    <p className="control">
+                        <button className="button is-success">
+                            Sign Up
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <p>Already have an account? <Link to='/login'>Login</Link></p>
         </div>
+
     )
 }
 

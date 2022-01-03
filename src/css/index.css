@@ -1,0 +1,11 @@
+.login-wrapper {
+    padding:  5em 35em 5em 35em;
+}
+
+.box-wrapper {
+    padding: 5em !important;
+}
+
+.log-button {
+    float: right;
+}

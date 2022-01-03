@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch, RouteComponentProps } from 'react-router-dom'
 import logging from "./config/logging";
-import authRoutes from './config/routes'
+import authRoutes from './config/routes';
+import 'bulma/css/bulma.css';
 
 const Application: React.FunctionComponent<{}> = props => {
   useEffect(() => {
