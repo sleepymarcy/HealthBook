@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import IPage from '../interfaces/page'
 import logging from '../config/logging'
+import '../css/index.css'
 
 const NewPetPage: React.FunctionComponent<IPage> = props => {
     

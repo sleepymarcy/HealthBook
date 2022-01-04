@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import IPage from '../interfaces/page'
 import logging from '../config/logging'
 import { RouteComponentProps, withRouter, Link } from 'react-router-dom'
+import '../css/index.css'
 
 const PetsPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = props => {
 

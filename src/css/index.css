@@ -1,11 +1,38 @@
 .login-wrapper {
-    padding:  5em 35em 5em 35em;
+  padding: 5% 35% 5% 35%;
+}
+
+@media screen and (max-width: 1408px) {
+  .login-wrapper {
+    padding: 5% 35% 5% 35%;
+  }
 }
 
 .box-wrapper {
-    padding: 5em !important;
+  padding: 5em !important;
 }
 
 .log-button {
-    float: right;
+  float: right;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.link {
+  color: black;
+}
+
+.link-to {
+  color: #3ec487;
+}
+
+.home-tiles {
+  padding: 5em 20em 5em 20em
+  ;
+}
+
+.tile-title {
+  padding-bottom: 0.5em
 }
