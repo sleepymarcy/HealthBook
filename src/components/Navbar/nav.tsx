@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import logo from './Logo.png'
+import logo from './Logo_name.png'
 import '../../css/index.css'
 
 export default function Nav() {
@@ -12,7 +12,6 @@ export default function Nav() {
                 <div className="navbar-item logo">
                     <Link to='/'>
                         <img src={logo} />
-                        Pet Care
                     </Link>
                 </div>
 
