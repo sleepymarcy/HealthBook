@@ -10,7 +10,7 @@ export default function Nav() {
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
                 <div className="navbar-item logo">
-                    <Link to='/'>
+                    <Link to='/home'>
                         <img src={logo} />
                     </Link>
                 </div>

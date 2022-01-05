@@ -1,4 +1,5 @@
 import IRoute from "../interfaces/route";
+import StartPage from "../pages/start";
 import HomePage from "../pages/home";
 import PetsPage from "../pages/pets";
 import PetPage from "../pages/pet"
@@ -51,9 +52,16 @@ const ownerRoutes: IRoute[] = [
 const mainRoutes: IRoute[] = [
     {
         name: 'Home',
-        path: '/',
+        path: '/home',
         exact: true,
         component: HomePage,
+        // auth: false
+    },
+    {
+        name: 'Start',
+        path: '/',
+        exact: true,
+        component: StartPage,
         // auth: false
     }
 ]

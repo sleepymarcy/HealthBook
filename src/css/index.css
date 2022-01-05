@@ -28,11 +28,31 @@
   color: #3ec487;
 }
 
-.home-tiles {
+.start-tiles {
   padding: 5em 20em 5em 20em
   ;
 }
 
+.home-tiles {
+  padding: 0em 10em 0em 10em;
+}
+
+.top {
+  padding-top: 2em;
+}
+
+.bot {
+  padding-bottom: 2em;
+}
+
 .tile-title {
   padding-bottom: 0.5em
+}
+
+.card-spacing {
+  padding: 0.5em !important;
+}
+
+.calendar-spacing {
+  padding: 2em;
 }

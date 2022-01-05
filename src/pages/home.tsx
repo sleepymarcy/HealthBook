@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import IPage from '../interfaces/page'
 import logging from '../config/logging'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Navbar/nav'
-import '../css/index.css'
+import '../css/index.css';
+import Calendar from 'react-calendar'
+import nela from '../assets/Nela.png'
 
 const HomePage: React.FunctionComponent<IPage> = props => {
 
@@ -11,89 +13,66 @@ const HomePage: React.FunctionComponent<IPage> = props => {
         logging.info(`Loading ${props.name}`)
     }, [props.name]);
 
+
+    const [value, onChange] = useState(new Date());
+
     return (
         <div>
             <Nav />
-            <div className="home-tiles">
+
+            <div className="home-tiles top">
                 <div className="tile is-ancestor">
                     <div className="tile is-parent">
                         <article className="tile is-child box">
-                            <p className="title tile-title">Owner</p>
+                            <Link to="/pets"><p className="title tile-title">Pets</p></Link>
                             <p className="subtitle">
-                                <div className="buttons">
-                                    <div className="button is-light">
-                                        <Link to='/register' className='link'>Sign up</Link>
-                                    </div>
-                                    <div className="button is-light">
-                                        <Link to='/login' className='link'>Log in</Link>
+                                <div className="card">
+                                    <div className="card-content card-spacing">
+                                        <div className="media">
+                                            <div className="media-left">
+                                                <figure className="image is-48x48">
+                                                    <img src={nela} />
+                                                </figure>
+                                            </div>
+                                            <div className="media-content card-spacing">
+                                                <p className="title is-4">Nela</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </p>
                         </article>
+
+
+
                     </div>
                     <div className="tile is-parent">
                         <article className="tile is-child box">
-                            <p className="title tile-title">Vet</p>
-                            <p className="subtitle">
-                                <div className="buttons">
-                                    <div className="button is-light">
-                                        <Link to='/register' className='link'>Sign up</Link>
-                                    </div>
-                                    <div className="button is-light">
-                                        <Link to='/login' className='link'>Log in</Link>
-                                    </div>
-                                </div>
-                            </p>
+                            <Link to="/vets"><p className="title tile-title">Vets</p></Link>
                         </article>
                     </div>
                 </div>
             </div>
-            {/* <div className='columns is-variable is-1-mobile is-0-tablet is-3-desktop is-8-widescreen is-2-fullhd main'>
-                <div className="card column">
-                    <div className="card-content">
-                        <p className="title">
-                            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
-                        </p>
-                        <p className="subtitle">
-                            Jeff Atwood
-                        </p>
+            <div className="home-tiles bot">
+                <div className="tile is-ancestor">
+                    <div className="tile is-parent">
+                        <article className="tile is-child box">
+                            <p className="title tile-title">Appointments</p>
+                        </article>
                     </div>
-                    <footer className="card-footer">
-                        <p className="card-footer-item">
-                            <span>
-                                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                            </span>
-                        </p>
-                        <p className="card-footer-item">
-                            <span>
-                                Share on <a href="#">Facebook</a>
-                            </span>
-                        </p>
-                    </footer>
-                </div>
-                <div className="card column">
-                    <div className="card-content">
-                        <p className="title">
-                            “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
-                        </p>
-                        <p className="subtitle">
-                            Jeff Atwood
-                        </p>
+                    <div className="tile is-parent">
+                        <article className="tile is-child box">
+                            <Link to="/calendar"><p className="title tile-title">Calendar</p></Link>
+
+                            <Calendar
+                                className="calendar-spacing"
+                                onChange={onChange}
+                                value={value}
+                            />
+                        </article>
                     </div>
-                    <footer className="card-footer">
-                        <p className="card-footer-item">
-                            <span>
-                                View on <a href="https://twitter.com/codinghorror/status/506010907021828096">Twitter</a>
-                            </span>
-                        </p>
-                        <p className="card-footer-item">
-                            <span>
-                                Share on <a href="#">Facebook</a>
-                            </span>
-                        </p>
-                    </footer>
                 </div>
-            </div> */}
+            </div>
 
             <div className="card">
                 <div className="card-content">
