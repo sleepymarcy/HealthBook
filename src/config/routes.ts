@@ -4,6 +4,7 @@ import HomePage from "../pages/home";
 import PetsPage from "../pages/pets";
 import PetPage from "../pages/pet"
 import NewPetPage from "../pages/new"
+import CalendarPage from "../pages/calendar"
 import LoginPage from "../pages/login";
 import SignupPage from "../pages/signup"
 
@@ -45,6 +46,13 @@ const ownerRoutes: IRoute[] = [
         path: '/pets/:petname',
         exact: true,
         component: PetPage,
+        // auth: false
+    },
+    {
+        name: 'Calendar',
+        path: '/calendar',
+        exact: true,
+        component: CalendarPage,
         // auth: false
     }
 ]

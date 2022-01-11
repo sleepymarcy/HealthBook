@@ -12,7 +12,7 @@ const StartPage: React.FunctionComponent<IPage> = props => {
     }, [props.name]);
 
     return (
-        <div>
+        <div className="container">
             <Nav />
             <div className="start-tiles">
                 <div className="tile is-ancestor">

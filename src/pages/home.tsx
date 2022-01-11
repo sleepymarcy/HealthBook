@@ -4,8 +4,9 @@ import logging from '../config/logging'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Navbar/nav'
 import '../css/index.css';
+import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar'
-import nela from '../assets/Nela.png'
+import kicia from '../assets/Kicia.jpg'
 
 const HomePage: React.FunctionComponent<IPage> = props => {
 
@@ -17,7 +18,7 @@ const HomePage: React.FunctionComponent<IPage> = props => {
     const [value, onChange] = useState(new Date());
 
     return (
-        <div>
+        <div className="container">
             <Nav />
 
             <div className="home-tiles top">
@@ -26,19 +27,11 @@ const HomePage: React.FunctionComponent<IPage> = props => {
                         <article className="tile is-child box">
                             <Link to="/pets"><p className="title tile-title">Pets</p></Link>
                             <p className="subtitle">
-                                <div className="card">
-                                    <div className="card-content card-spacing">
-                                        <div className="media">
-                                            <div className="media-left">
-                                                <figure className="image is-48x48">
-                                                    <img src={nela} />
-                                                </figure>
-                                            </div>
-                                            <div className="media-content card-spacing">
-                                                <p className="title is-4">Nela</p>
-                                            </div>
-                                        </div>
+                                <div className="image-wrapper aligned">
+                                    <div className="image-cropper">
+                                        <img src={kicia} />
                                     </div>
+                                    <span>Kicia</span>
                                 </div>
                             </p>
                         </article>
@@ -65,7 +58,7 @@ const HomePage: React.FunctionComponent<IPage> = props => {
                             <Link to="/calendar"><p className="title tile-title">Calendar</p></Link>
 
                             <Calendar
-                                className="calendar-spacing"
+                                className="container"
                                 onChange={onChange}
                                 value={value}
                             />

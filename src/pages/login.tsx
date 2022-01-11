@@ -37,7 +37,7 @@ const LoginPage: React.FunctionComponent<IPage> = props => {
                 </div>
                 <div className="field log-button" id="">
                     <p className="control">
-                        <Link to='/'>
+                        <Link to='/home'>
                             <button className="button is-success">
                                 Login
                             </button>

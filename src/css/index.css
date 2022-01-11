@@ -25,13 +25,15 @@
 }
 
 .link-to {
-  color: #3ec487;
+  color: #3ec487 !important;
 }
 
+
 .start-tiles {
-  padding: 5em 20em 5em 20em
-  ;
+  padding: 5em 20em 5em 20em;
 }
+
+/* Home Page */
 
 .home-tiles {
   padding: 0em 10em 0em 10em;
@@ -46,13 +48,55 @@
 }
 
 .tile-title {
-  padding-bottom: 0.5em
+  padding-bottom: 0.5em;
 }
 
-.card-spacing {
-  padding: 0.5em !important;
+.tile-title:hover {
+  color: #9FC9D3 !important;
 }
 
-.calendar-spacing {
-  padding: 2em;
+.image-wrapper {
+  margin-bottom: 1em;
+}
+
+.img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.aligned {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  padding: 10px;
+}
+
+/* Calendar */
+
+.date-selected {
+  text-align: center;
+}
+
+.calendar {
+  border-radius: 5px;
+}
+
+.calendar-pad {
+  padding-right: 0 !important;
+}
+
+.box-pad {
+  padding-left: 0 !important;
 }
