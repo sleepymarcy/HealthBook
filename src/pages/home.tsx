@@ -29,7 +29,7 @@ const HomePage: React.FunctionComponent<IPage> = props => {
                             <p className="subtitle">
                                 <div className="image-wrapper aligned">
                                     <div className="image-cropper">
-                                        <img src={kicia} />
+                                        <img src={kicia} alt="Kicia" />
                                     </div>
                                     <span>Kicia</span>
                                 </div>
