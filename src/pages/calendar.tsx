@@ -78,7 +78,7 @@ const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = 
                                 data-target="modal-js-example"
                                 value={dateState}
                                 onChange={changeDate}
-                                // onClickDay={openModal}
+                            // onClickDay={openModal}
                             />
 
                         </article>
@@ -96,12 +96,22 @@ const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = 
 
                         </article>
                     </div>
-                    
+
 
                 </div>
 
             </div>
+            <div id="modal-js-example" className="modal">
+                <div className="modal-background"></div>
 
+                <div className="modal-content">
+                    <div className="box">
+                        <p>Modal JS example</p>
+                    </div>
+                </div>
+
+                <button className="modal-close is-large" aria-label="close"></button>
+            </div>
         </div>
     )
 }
