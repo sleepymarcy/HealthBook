@@ -8,7 +8,7 @@ import 'react-calendar/dist/Calendar.css';
 import Calendar from 'react-calendar';
 import moment from 'moment';
 
-const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = props => {
+const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = (props) => {
 
     useEffect(() => {
         logging.info(`Loading ${props.name}`)
@@ -19,53 +19,51 @@ const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = 
         setDateState(e)
     }
 
-    useEffect(() => {
-        document.addEventListener('DOMContentLoaded', () => {
-            // Functions to open and close a modal
-            function openModal($el: any) {
-                $el.classList.add('is-active');
-            }
+    document.addEventListener('DOMContentLoaded', () => {
+        // Functions to open and close a modal
+        const openModal = ($el: any) => {
+            $el.classList.add('is-active');
+        }
 
-            function closeModal($el: any) {
-                $el.classList.remove('is-active');
-            }
+        const closeModal = ($el: any) => {
+            $el.classList.remove('is-active');
+        }
 
-            function closeAllModals() {
-                (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                    closeModal($modal);
-                });
-            }
-
-            // Add a click event on buttons to open a specific modal
-            (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-                const modal = ($trigger as any).dataset.target
-                const $target = document.getElementById(modal);
-                console.log($target);
-
-                $trigger.addEventListener('click', () => {
-                    openModal($target);
-                });
+        const closeAllModals = () => {
+            (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+                closeModal($modal);
             });
+        }
 
-            // Add a click event on various child elements to close the parent modal
-            (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-                const $target = $close.closest('.modal');
+        // Add a click event on buttons to open a specific modal
+        (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+            const modal = ($trigger as any).dataset.target
+            const $target = document.getElementById(modal);
+            console.log($target);
 
-                $close.addEventListener('click', () => {
-                    closeModal($target);
-                });
-            });
-
-            // Add a keyboard event to close all modals
-            document.addEventListener('keydown', (event) => {
-                const e = event || window.event;
-
-                if (e.keyCode === 27) { // Escape key
-                    closeAllModals();
-                }
+            $trigger.addEventListener('click', () => {
+                openModal($target);
             });
         });
-    })
+
+        // Add a click event on various child elements to close the parent modal
+        (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .calendar') || []).forEach(($close) => {
+            const $target = $close.closest('.modal');
+
+            $close.addEventListener('click', () => {
+                closeModal($target);
+            });
+        });
+
+        // Add a keyboard event to close all modals
+        document.addEventListener('keydown', (event) => {
+            const e = event || window.event;
+
+            if (e.keyCode === 27) { // Escape key
+                closeAllModals();
+            }
+        });
+    });
 
     return (
         <div className="container">
@@ -80,6 +78,7 @@ const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = 
                                 data-target="modal-js-example"
                                 value={dateState}
                                 onChange={changeDate}
+                                // onClickDay={openModal}
                             />
 
                         </article>
@@ -97,22 +96,12 @@ const CalendarPage: React.FunctionComponent<IPage & RouteComponentProps<any>> = 
 
                         </article>
                     </div>
+                    
 
                 </div>
 
             </div>
 
-            <div id="modal-js-example" className="modal">
-                <div className="modal-background"></div>
-
-                <div className="modal-content">
-                    <div className="box">
-                        <p>Modal JS example</p>
-                    </div>
-                </div>
-
-                <button className="modal-close is-large" aria-label="close"></button>
-            </div>
         </div>
     )
 }
